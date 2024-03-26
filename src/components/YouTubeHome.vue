@@ -118,12 +118,12 @@
       <q-page-container>
         <div class="q-pa-md">
           <div class="row">
-            <div v-for="n in 8" :key="n">
+            <div v-for="video in videos" :key="video?.id">
               <div class="col-6">
                 <q-item>
                   <q-item-section>
                     <q-img
-                      src="/public/assets/icons/subscriptions.png"
+                      :src="video?.img"
                       :style="{ height: '200px', width: '250px' }"
                     />
                   </q-item-section>
@@ -146,9 +146,13 @@ export default {
       drawer: ref(false),
       videos: ref([
         { id: 1, img: "https://cdn.quasar.dev/img/parallax1.jpg" },
-        { id: 2, img: "https://cdn.quasar.dev/img/parallax2" },
+        { id: 2, img: "https://cdn.quasar.dev/img/parallax2.jpg" },
         { id: 3, img: "https://cdn.quasar.dev/img/mountains.jpg" },
         { id: 4, img: "https://cdn.quasar.dev/img/quasar.jpg" },
+        { id: 5, img: "https://cdn.quasar.dev/img/parallax1.jpg" },
+        { id: 6, img: "https://cdn.quasar.dev/img/parallax2.jpg" },
+        { id: 7, img: "https://cdn.quasar.dev/img/mountains.jpg" },
+        { id: 8, img: "https://cdn.quasar.dev/img/quasar.jpg" },
       ]),
     };
   },
