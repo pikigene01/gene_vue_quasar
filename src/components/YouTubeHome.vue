@@ -24,8 +24,18 @@
             />
             YouTube
           </q-toolbar-title>
-          <q-toolbar-title :style="{ color: '#333', fontWeight: 'bolder' }">
-            <div class="search row">
+          <q-toolbar-title
+            class="mobile"
+            :style="{ color: '#333', fontWeight: 'bolder' }"
+          >
+            <div
+              class="search"
+              :style="{
+                display: 'flex',
+                'flex-direction': 'row',
+                'align-items': 'center',
+              }"
+            >
               <div class="search-input">
                 <input class="gene-input" type="text" placeholder="search" />
                 <q-icon
@@ -49,13 +59,42 @@
               />
             </div>
           </q-toolbar-title>
-          <q-toolbar-title :style="{ color: '#333', fontWeight: 'bolder' }">
-            <q-icon
-              name="fa-brands fa-youtube"
-              color="red"
-              :style="{ fontSize: '30px' }"
-            />
-            YouTube
+          <q-toolbar-title
+            class="mobile"
+            :style="{ color: '#333', fontWeight: 'bolder' }"
+          >
+            <div
+              class="flex"
+              :style="{
+                display: 'flex',
+                'flex-direction': 'row',
+                'justify-content': 'end',
+                'margin-left': '20px',
+              }"
+            >
+              <div
+                :style="{
+                  display: 'flex',
+                  'flex-direction': 'row',
+                  alignItems: 'center',
+                  'justify-content': 'center',
+                }"
+              >
+                <q-icon
+                  name="fa-solid fa-ellipsis-vertical"
+                  color="black"
+                  :style="{ fontSize: '20px' }"
+                />
+                <div class="gene-menu">
+                  <q-icon
+                    name="fas fa-user"
+                    color="blue"
+                    :style="{ fontSize: '20px' }"
+                  />
+                  Gene
+                </div>
+              </div>
+            </div>
           </q-toolbar-title>
         </q-toolbar>
       </q-header>
@@ -270,11 +309,13 @@ export default {
 <style>
 .search-input {
   border: 1px solid #333;
-  padding: 7px;
-  border-radius: 10px;
+  padding: 3px;
+  border-radius: 40px;
   margin-top: 5px;
+  width: 100%;
 }
 .gene-input {
+  margin-left: 10px;
   outline: 0px !important;
   background: transparent !important;
   border: 0px !important;
@@ -282,5 +323,26 @@ export default {
 }
 .gene-icon {
   margin: 0px 4px;
+}
+.gene-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  border: 1px solid blue;
+  color: blue;
+  border-radius: 40px;
+  width: 130px;
+}
+@media screen and (max-width: 575px) {
+  .search-input {
+    display: none;
+  }
+  .gene-input {
+    display: none;
+  }
+  .mobile {
+    display: none;
+  }
 }
 </style>
