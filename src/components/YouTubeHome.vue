@@ -116,14 +116,22 @@
       </q-drawer>
 
       <q-page-container>
-        <q-page padding>
-          <p v-for="n in 15" :key="n">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil
-            praesentium molestias a adipisci, dolore vitae odit, quidem
-            consequatur optio voluptates asperiores pariatur eos numquam rerum
-            delectus commodi perferendis voluptate?
-          </p>
-        </q-page>
+        <div class="q-pa-md">
+          <div class="row">
+            <div v-for="n in 8" :key="n">
+              <div class="col-6">
+                <q-item>
+                  <q-item-section>
+                    <q-img
+                      src="/public/assets/icons/subscriptions.png"
+                      :style="{ height: '200px', width: '250px' }"
+                    />
+                  </q-item-section>
+                </q-item>
+              </div>
+            </div>
+          </div>
+        </div>
       </q-page-container>
     </q-layout>
   </div>
