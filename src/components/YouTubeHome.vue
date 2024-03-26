@@ -56,6 +56,42 @@
                         'border-radius': '10px',
                       }"
                     />
+                    <div
+                      class="flex"
+                      :style="{
+                        display: 'flex',
+                        'flex-direction': 'row',
+                        'margin-top': '10px',
+                      }"
+                    >
+                      <div class="avater">
+                        <div>
+                          <q-item>
+                            <q-item-section top avatar>
+                              <q-avatar>
+                                <img src="/public/assets/icons/avatar.png" />
+                              </q-avatar>
+                            </q-item-section>
+
+                            <q-item-section>
+                              <q-item-label>{{ video?.title }}</q-item-label>
+                              <q-item-label caption>{{
+                                video?.descrition
+                              }}</q-item-label>
+                              <q-item-label caption>{{
+                                video?.created_at
+                              }}</q-item-label>
+                            </q-item-section>
+
+                            <q-item-section side top>
+                              <q-badge label="10k" />
+                            </q-item-section>
+                          </q-item>
+
+                          <q-separator spaced inset="item" />
+                        </div>
+                      </div>
+                    </div>
                   </q-item-section>
                 </q-item>
               </div>
