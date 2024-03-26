@@ -3,7 +3,7 @@
     <q-layout
       view="hHh Lpr lff"
       container
-      style="height: 300px"
+      style="height: 100vh"
       class="shadow-2 rounded-borders"
     >
       <q-header elevated :class="$q.dark.isActive ? 'bg-primary' : 'bg-white'">
