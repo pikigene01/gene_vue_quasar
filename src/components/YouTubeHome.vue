@@ -65,19 +65,46 @@
                 <q-item-section> Home </q-item-section>
               </q-item-section>
             </q-item>
-            <q-item clickable v-ripple>
+            <q-item
+              clickable
+              v-ripple
+              :style="{
+                display: 'flex',
+                'flex-direction': 'column',
+                'align-items': 'center',
+                'justify-content': 'center',
+              }"
+            >
               <q-item-section avatar>
                 <q-icon name="fas fa-home" />
                 <q-item-section> Shorts </q-item-section>
               </q-item-section>
             </q-item>
-            <q-item clickable v-ripple>
+            <q-item
+              clickable
+              v-ripple
+              :style="{
+                display: 'flex',
+                'flex-direction': 'column',
+                'align-items': 'center',
+                'justify-content': 'center',
+              }"
+            >
               <q-item-section avatar>
                 <q-icon name="fas fa-home" />
                 <q-item-section> Subscriptions </q-item-section>
               </q-item-section>
             </q-item>
-            <q-item clickable v-ripple>
+            <q-item
+              clickable
+              v-ripple
+              :style="{
+                display: 'flex',
+                'flex-direction': 'column',
+                'align-items': 'center',
+                'justify-content': 'center',
+              }"
+            >
               <q-item-section avatar>
                 <q-icon name="fas fa-home" />
                 <q-item-section>Videos </q-item-section>
