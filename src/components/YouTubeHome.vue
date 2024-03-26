@@ -6,7 +6,7 @@
       style="height: 100vh"
       class="shadow-2 rounded-borders"
     >
-      <q-header elevated :class="$q.dark.isActive ? 'bg-primary' : 'bg-white'">
+      <q-header :class="$q.dark.isActive ? 'bg-primary' : 'bg-white'">
         <q-toolbar>
           <q-btn
             flat
@@ -22,8 +22,8 @@
               color="red"
               :style="{ fontSize: '30px' }"
             />
-            YouTube</q-toolbar-title
-          >
+            YouTube
+          </q-toolbar-title>
           <q-input
             v-model="search"
             debounce="500"
@@ -36,84 +36,10 @@
               <q-icon name="fa fa-search" />
             </template>
           </q-input>
-
-          <q-input
-            rounded
-            filled
-            v-model="text"
-            label="Rounded filled"
-            :style="{ height: '20px' }"
-          />
         </q-toolbar>
       </q-header>
 
-      <q-drawer v-model="drawer" show-if-above :width="100" :breakpoint="500">
-        <q-scroll-area class="fit">
-          <q-list padding class="menu-list">
-            <q-item
-              clickable
-              v-ripple
-              :style="{
-                display: 'flex',
-                'flex-direction': 'column',
-                'align-items': 'center',
-                'justify-content': 'center',
-              }"
-            >
-              <q-item-section avatar>
-                <q-icon name="fas fa-home" />
-                <q-item-section> Home </q-item-section>
-              </q-item-section>
-            </q-item>
-            <q-item
-              clickable
-              v-ripple
-              :style="{
-                display: 'flex',
-                'flex-direction': 'column',
-                'align-items': 'center',
-                'justify-content': 'center',
-              }"
-            >
-              <q-item-section avatar>
-                <q-img src="/public/assets/icons/shorts.png" />
-                <q-item-section> Shorts </q-item-section>
-              </q-item-section>
-            </q-item>
-            <q-item
-              clickable
-              v-ripple
-              :style="{
-                display: 'flex',
-                'flex-direction': 'column',
-                'align-items': 'center',
-                'justify-content': 'center',
-              }"
-            >
-              <q-item-section avatar>
-                <q-img src="/public/assets/icons/subscriptions.png" />
-                <q-item-section> Subscriptions </q-item-section>
-              </q-item-section>
-            </q-item>
-            <q-item
-              clickable
-              v-ripple
-              :style="{
-                display: 'flex',
-                'flex-direction': 'column',
-                'align-items': 'center',
-                'justify-content': 'center',
-              }"
-            >
-              <q-item-section avatar>
-                <q-img src="/public/assets/icons/videos.png" />
-
-                <q-item-section>Videos </q-item-section>
-              </q-item-section>
-            </q-item>
-          </q-list>
-        </q-scroll-area>
-      </q-drawer>
+      <Drawer></Drawer>
 
       <q-page-container>
         <div class="q-pa-md">
@@ -124,7 +50,11 @@
                   <q-item-section>
                     <q-img
                       :src="video?.img"
-                      :style="{ height: '200px', width: '250px' }"
+                      :style="{
+                        height: '200px',
+                        width: '250px',
+                        'border-radius': '10px',
+                      }"
                     />
                   </q-item-section>
                 </q-item>
@@ -139,8 +69,12 @@
 
 <script>
 import { ref } from "vue";
+import Drawer from "./Drawer.vue";
 
 export default {
+  components: {
+    Drawer,
+  },
   setup() {
     return {
       drawer: ref(false),
