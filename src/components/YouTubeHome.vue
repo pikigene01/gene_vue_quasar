@@ -6,7 +6,7 @@
       style="height: 300px"
       class="shadow-2 rounded-borders"
     >
-      <q-header elevated :class="$q.dark.isActive ? 'bg-primary' : 'bg-black'">
+      <q-header elevated :class="$q.dark.isActive ? 'bg-primary' : 'bg-white'">
         <q-toolbar>
           <q-btn
             flat
@@ -14,45 +14,43 @@
             round
             dense
             icon="fa-solid fa-bars"
-            :style="{ color: '#fff' }"
+            :style="{ color: '#333' }"
           />
-          <q-toolbar-title>Header</q-toolbar-title>
+          <q-toolbar-title :style="{ color: '#333', fontWeight: 'bolder' }"
+            >YouTube</q-toolbar-title
+          >
         </q-toolbar>
       </q-header>
 
-      <q-drawer v-model="drawer" show-if-above :width="200" :breakpoint="500">
+      <q-drawer v-model="drawer" show-if-above :width="100" :breakpoint="500">
         <q-scroll-area class="fit">
           <q-list padding class="menu-list">
+            <q-item
+              clickable
+              v-ripple
+              :style="{
+                display: 'flex',
+                'flex-direction': 'column',
+                'align-items': 'center',
+                'justify-content': 'center',
+              }"
+            >
+              <q-item-section avatar>
+                <q-icon name="fas fa-home" />
+                <q-item-section> Home </q-item-section>
+              </q-item-section>
+            </q-item>
             <q-item clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="fas fa-inbox" />
+                <q-icon name="fas fa-home" />
+                <q-item-section> Shorts </q-item-section>
               </q-item-section>
-
-              <q-item-section> Inbox </q-item-section>
             </q-item>
-
-            <q-item active clickable v-ripple>
-              <q-item-section avatar>
-                <q-icon name="star" />
-              </q-item-section>
-
-              <q-item-section> Star </q-item-section>
-            </q-item>
-
             <q-item clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="send" />
+                <q-icon name="fas fa-home" />
+                <q-item-section> Videos </q-item-section>
               </q-item-section>
-
-              <q-item-section> Send </q-item-section>
-            </q-item>
-
-            <q-item clickable v-ripple>
-              <q-item-section avatar>
-                <q-icon name="drafts" />
-              </q-item-section>
-
-              <q-item-section> Drafts </q-item-section>
             </q-item>
           </q-list>
         </q-scroll-area>
