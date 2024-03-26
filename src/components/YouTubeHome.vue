@@ -16,9 +16,34 @@
             icon="fa-solid fa-bars"
             :style="{ color: '#333' }"
           />
-          <q-toolbar-title :style="{ color: '#333', fontWeight: 'bolder' }"
-            >YouTube</q-toolbar-title
+          <q-toolbar-title :style="{ color: '#333', fontWeight: 'bolder' }">
+            <q-icon
+              name="fa-brands fa-youtube"
+              color="red"
+              :style="{ fontSize: '30px' }"
+            />
+            YouTube</q-toolbar-title
           >
+          <q-input
+            v-model="search"
+            debounce="500"
+            rounded
+            filled
+            placeholder="Search"
+            hint="Debouncing 500ms"
+          >
+            <template v-slot:append>
+              <q-icon name="fa fa-search" />
+            </template>
+          </q-input>
+
+          <q-input
+            rounded
+            filled
+            v-model="text"
+            label="Rounded filled"
+            :style="{ height: '20px' }"
+          />
         </q-toolbar>
       </q-header>
 
