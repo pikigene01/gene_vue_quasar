@@ -76,7 +76,7 @@
               }"
             >
               <q-item-section avatar>
-                <q-icon name="fas fa-home" />
+                <q-img src="/public/assets/icons/shorts.png" />
                 <q-item-section> Shorts </q-item-section>
               </q-item-section>
             </q-item>
@@ -91,7 +91,7 @@
               }"
             >
               <q-item-section avatar>
-                <q-icon name="fas fa-home" />
+                <q-img src="/public/assets/icons/subscriptions.png" />
                 <q-item-section> Subscriptions </q-item-section>
               </q-item-section>
             </q-item>
@@ -106,7 +106,8 @@
               }"
             >
               <q-item-section avatar>
-                <q-icon name="fas fa-home" />
+                <q-img src="/public/assets/icons/videos.png" />
+
                 <q-item-section>Videos </q-item-section>
               </q-item-section>
             </q-item>
