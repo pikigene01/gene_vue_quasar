@@ -144,6 +144,12 @@ export default {
   setup() {
     return {
       drawer: ref(false),
+      videos: ref([
+        { id: 1, img: "https://cdn.quasar.dev/img/parallax1.jpg" },
+        { id: 2, img: "https://cdn.quasar.dev/img/parallax2" },
+        { id: 3, img: "https://cdn.quasar.dev/img/mountains.jpg" },
+        { id: 4, img: "https://cdn.quasar.dev/img/quasar.jpg" },
+      ]),
     };
   },
 };
