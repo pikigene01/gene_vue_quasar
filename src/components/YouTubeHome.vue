@@ -45,7 +45,7 @@
                   :style="{ fontSize: '30px' }"
                 />
                 <q-icon
-                  class="gene-icon"
+                  class="gene-icon gene-search"
                   name="fa-solid fa-search"
                   color="black"
                   :style="{ fontSize: '30px' }"
@@ -333,6 +333,7 @@ export default {
   color: blue;
   border-radius: 40px;
   width: 130px;
+  margin-left: 13px;
 }
 @media screen and (max-width: 575px) {
   .search-input {
