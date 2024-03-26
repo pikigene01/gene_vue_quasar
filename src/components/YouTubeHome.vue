@@ -24,23 +24,109 @@
             />
             YouTube
           </q-toolbar-title>
-          <q-input
-            v-model="search"
-            debounce="500"
-            rounded
-            filled
-            placeholder="Search"
-            hint="Debouncing 500ms"
-          >
-            <template v-slot:append>
-              <q-icon name="fa fa-search" />
-            </template>
-          </q-input>
+          <q-toolbar-title :style="{ color: '#333', fontWeight: 'bolder' }">
+            <div class="search row">
+              <div class="search-input">
+                <input class="gene-input" type="text" placeholder="search" />
+                <q-icon
+                  class="gene-icon"
+                  name="fa-solid fa-keyboard"
+                  color="black"
+                  :style="{ fontSize: '30px' }"
+                />
+                <q-icon
+                  class="gene-icon"
+                  name="fa-solid fa-search"
+                  color="black"
+                  :style="{ fontSize: '30px' }"
+                />
+              </div>
+              <q-icon
+                class="gene-icon"
+                name="fa-solid fa-microphone"
+                color="black"
+                :style="{ fontSize: '30px' }"
+              />
+            </div>
+          </q-toolbar-title>
+          <q-toolbar-title :style="{ color: '#333', fontWeight: 'bolder' }">
+            <q-icon
+              name="fa-brands fa-youtube"
+              color="red"
+              :style="{ fontSize: '30px' }"
+            />
+            YouTube
+          </q-toolbar-title>
         </q-toolbar>
       </q-header>
 
-      <Drawer></Drawer>
+      <q-drawer v-model="drawer" show-if-above :width="100" :breakpoint="500">
+        <q-scroll-area class="fit">
+          <q-list padding class="menu-list">
+            <q-item
+              clickable
+              v-ripple
+              :style="{
+                display: 'flex',
+                'flex-direction': 'column',
+                'align-items': 'center',
+                'justify-content': 'center',
+              }"
+            >
+              <q-item-section avatar>
+                <q-icon name="fas fa-home" />
+                <q-item-section> Home </q-item-section>
+              </q-item-section>
+            </q-item>
+            <q-item
+              clickable
+              v-ripple
+              :style="{
+                display: 'flex',
+                'flex-direction': 'column',
+                'align-items': 'center',
+                'justify-content': 'center',
+              }"
+            >
+              <q-item-section avatar>
+                <q-img src="/public/assets/icons/shorts.png" />
+                <q-item-section> Shorts </q-item-section>
+              </q-item-section>
+            </q-item>
+            <q-item
+              clickable
+              v-ripple
+              :style="{
+                display: 'flex',
+                'flex-direction': 'column',
+                'align-items': 'center',
+                'justify-content': 'center',
+              }"
+            >
+              <q-item-section avatar>
+                <q-img src="/public/assets/icons/subscriptions.png" />
+                <q-item-section> Subscriptions </q-item-section>
+              </q-item-section>
+            </q-item>
+            <q-item
+              clickable
+              v-ripple
+              :style="{
+                display: 'flex',
+                'flex-direction': 'column',
+                'align-items': 'center',
+                'justify-content': 'center',
+              }"
+            >
+              <q-item-section avatar>
+                <q-img src="/public/assets/icons/videos.png" />
 
+                <q-item-section>Videos </q-item-section>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-scroll-area>
+      </q-drawer>
       <q-page-container>
         <div class="q-pa-md">
           <div class="row">
@@ -180,4 +266,21 @@ export default {
 <style lang="sass" scoped>
 .menu-list .q-item
   border-radius: 0 32px 32px 0
+</style>
+<style>
+.search-input {
+  border: 1px solid #333;
+  padding: 7px;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+.gene-input {
+  outline: 0px !important;
+  background: transparent !important;
+  border: 0px !important;
+  text-decoration: none !important;
+}
+.gene-icon {
+  margin: 0px 4px;
+}
 </style>
