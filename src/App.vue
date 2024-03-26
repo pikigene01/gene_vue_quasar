@@ -1,47 +1,101 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <q-layout view="lHh Lpr lFf">
+    <q-header elevated class="glossy">
+      <q-toolbar>
+        <q-btn
+          flat
+          dense
+          round
+          @click="leftDrawerOpen = !leftDrawerOpen"
+          aria-label="Menu"
+          icon="fas fa-bars"
+        />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+        <q-toolbar-title>
+          Quasar App
+        </q-toolbar-title>
 
-  <main>
-    <TheWelcome />
-  </main>
+        <div>Quasar v{{ $q.version }}</div>
+      </q-toolbar>
+    </q-header>
+
+    <q-drawer
+      v-model="leftDrawerOpen"
+      show-if-above
+      bordered
+      class="bg-grey-2"
+    >
+      <q-list>
+        <q-item-label header>Essential Links</q-item-label>
+        <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
+          <q-item-section avatar>
+            <q-icon name="fas fa-graduation-cap" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Docs</q-item-label>
+            <q-item-label caption>quasar.dev</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable tag="a" target="_blank" href="https://github.com/quasarframework/">
+          <q-item-section avatar>
+            <q-icon name="fas fa-code" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Github</q-item-label>
+            <q-item-label caption>github.com/quasarframework</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
+          <q-item-section avatar>
+            <q-icon name="fas fa-comments" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Discord Chat Channel</q-item-label>
+            <q-item-label caption>chat.quasar.dev</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
+          <q-item-section avatar>
+            <q-icon name="far fa-clipboard" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Forum</q-item-label>
+            <q-item-label caption>forum.quasar.dev</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable tag="a" target="_blank" href="https://twitter.com/quasarframework">
+          <q-item-section avatar>
+            <q-icon name="fab fa-twitter" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Twitter</q-item-label>
+            <q-item-label caption>@quasarframework</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
+    </q-drawer>
+
+    <q-page-container>
+      <HelloWorld />
+    </q-page-container>
+  </q-layout>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+import { ref } from 'vue'
+import HelloWorld from './components/HelloWorld.vue'
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+export default {
+  name: 'LayoutDefault',
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+  components: {
+    HelloWorld
+  },
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  setup () {
+    return {
+      leftDrawerOpen: ref(false)
+    }
   }
 }
-</style>
+</script>

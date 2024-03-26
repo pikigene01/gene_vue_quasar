@@ -1,88 +1,88 @@
-<script setup>
-import WelcomeItem from './WelcomeItem.vue'
-import DocumentationIcon from './icons/IconDocumentation.vue'
-import ToolingIcon from './icons/IconTooling.vue'
-import EcosystemIcon from './icons/IconEcosystem.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
-import SupportIcon from './icons/IconSupport.vue'
+<template>
+  <div class="q-pa-md">
+    <q-layout view="hHh Lpr lff" container style="height: 300px" class="shadow-2 rounded-borders">
+      <q-header elevated :class="$q.dark.isActive ? 'bg-primary' : 'bg-black'">
+        <q-toolbar>
+          <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
+          <q-toolbar-title>Header</q-toolbar-title>
+        </q-toolbar>
+      </q-header>
+
+      <q-drawer
+        v-model="drawer"
+        show-if-above
+        :width="200"
+        :breakpoint="500"
+      >
+        <q-scroll-area class="fit">
+          <q-list padding class="menu-list">
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="inbox" />
+              </q-item-section>
+
+              <q-item-section>
+                Inbox
+              </q-item-section>
+            </q-item>
+
+            <q-item active clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="star" />
+              </q-item-section>
+
+              <q-item-section>
+                Star
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="send" />
+              </q-item-section>
+
+              <q-item-section>
+                Send
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="drafts" />
+              </q-item-section>
+
+              <q-item-section>
+                Drafts
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-scroll-area>
+      </q-drawer>
+
+      <q-page-container>
+        <q-page padding>
+          <p v-for="n in 15" :key="n">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil praesentium molestias a adipisci, dolore vitae odit, quidem consequatur optio voluptates asperiores pariatur eos numquam rerum delectus commodi perferendis voluptate?
+          </p>
+        </q-page>
+      </q-page-container>
+    </q-layout>
+  </div>
+</template>
+
+<script>
+import { ref } from 'vue'
+
+export default {
+  setup () {
+    return {
+      drawer: ref(false)
+    }
+  }
+}
 </script>
 
-<template>
-  <WelcomeItem>
-    <template #icon>
-      <DocumentationIcon />
-    </template>
-    <template #heading>Documentation</template>
-
-    Vue’s
-    <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
-    provides you with all information you need to get started.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <ToolingIcon />
-    </template>
-    <template #heading>Tooling</template>
-
-    This project is served and bundled with
-    <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>. The
-    recommended IDE setup is
-    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>. If
-    you need to test your components and web pages, check out
-    <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
-    <a href="https://on.cypress.io/component" target="_blank" rel="noopener"
-      >Cypress Component Testing</a
-    >.
-
-    <br />
-
-    More instructions are available in <code>README.md</code>.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <EcosystemIcon />
-    </template>
-    <template #heading>Ecosystem</template>
-
-    Get official tools and libraries for your project:
-    <a href="https://pinia.vuejs.org/" target="_blank" rel="noopener">Pinia</a>,
-    <a href="https://router.vuejs.org/" target="_blank" rel="noopener">Vue Router</a>,
-    <a href="https://test-utils.vuejs.org/" target="_blank" rel="noopener">Vue Test Utils</a>, and
-    <a href="https://github.com/vuejs/devtools" target="_blank" rel="noopener">Vue Dev Tools</a>. If
-    you need more resources, we suggest paying
-    <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">Awesome Vue</a>
-    a visit.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <CommunityIcon />
-    </template>
-    <template #heading>Community</template>
-
-    Got stuck? Ask your question on
-    <a href="https://chat.vuejs.org" target="_blank" rel="noopener">Vue Land</a>, our official
-    Discord server, or
-    <a href="https://stackoverflow.com/questions/tagged/vue.js" target="_blank" rel="noopener"
-      >StackOverflow</a
-    >. You should also subscribe to
-    <a href="https://news.vuejs.org" target="_blank" rel="noopener">our mailing list</a> and follow
-    the official
-    <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">@vuejs</a>
-    twitter account for latest news in the Vue world.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <SupportIcon />
-    </template>
-    <template #heading>Support Vue</template>
-
-    As an independent project, Vue relies on community backing for its sustainability. You can help
-    us by
-    <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
-  </WelcomeItem>
-</template>
+<style lang="sass" scoped>
+.menu-list .q-item
+  border-radius: 0 32px 32px 0
+</style>
