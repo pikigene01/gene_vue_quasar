@@ -156,6 +156,22 @@
             <q-item-section>Videos </q-item-section>
           </q-item-section>
         </q-item>
+        <q-item
+          clickable
+          v-ripple
+          :style="{
+            display: 'flex',
+            'flex-direction': 'column',
+            'align-items': 'center',
+            'justify-content': 'center',
+          }"
+        >
+          <q-item-section avatar>
+            <q-img src="/public/assets/icons/history.jpg" />
+
+            <q-item-section>History </q-item-section>
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-scroll-area>
   </q-drawer>
