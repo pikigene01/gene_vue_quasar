@@ -34,7 +34,7 @@
                         <q-item>
                           <q-item-section top avatar>
                             <q-avatar>
-                              <img src="/public/assets/icons/avatar.png" />
+                              <img src="/assets/icons/avatar.png" />
                             </q-avatar>
                           </q-item-section>
 

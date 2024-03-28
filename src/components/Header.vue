@@ -121,7 +121,7 @@
           }"
         >
           <q-item-section avatar>
-            <q-img src="/public/assets/icons/shorts.png" />
+            <q-img src="/assets/icons/shorts.png" />
             <q-item-section> Shorts </q-item-section>
           </q-item-section>
         </q-item>
@@ -136,7 +136,7 @@
           }"
         >
           <q-item-section avatar>
-            <q-img src="/public/assets/icons/subscriptions.png" />
+            <q-img src="/assets/icons/subscriptions.png" />
             <q-item-section> Subscriptions </q-item-section>
           </q-item-section>
         </q-item>
@@ -151,7 +151,7 @@
           }"
         >
           <q-item-section avatar>
-            <q-img src="/public/assets/icons/videos.png" />
+            <q-img src="/assets/icons/videos.png" />
 
             <q-item-section>Videos </q-item-section>
           </q-item-section>
@@ -167,7 +167,7 @@
           }"
         >
           <q-item-section avatar>
-            <q-img src="/public/assets/icons/history.jpg" />
+            <q-img src="/assets/icons/history.jpg" />
 
             <q-item-section>History </q-item-section>
           </q-item-section>
